@@ -1,0 +1,201 @@
+.skill-page {
+  border: 1px soild white;
+  position: absolute;
+  left: 13%;
+  top: 12%;
+  bottom: 0%;
+  
+  .text-zone {
+    margin-right: 10rem;
+    p {
+      font-family: "Brush Script Std";
+      color: #f7d4d4;
+      margin-top: 20px;
+      font-weight: 400;
+      font-size: 15px;
+      letter-spacing: 3px;
+    }
+    .cv {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      h1 {
+        .first-h1,
+        .second-h1 {
+          color: #e01f1f;
+          min-width: 10px;
+          display: inline-block;
+          animation-fill-mode: both;
+
+          &:hover {
+            animation: rubberBand 1s;
+            color: #f7d4d4;
+          }
+        }
+      }
+
+      .cv-button {
+        text-align: center;
+        .button {
+          font-family: "Brush Script Std";
+          background-color: #e01f1f;
+          border: none;
+          color: #f7d4d4;
+          padding: 10px 5px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-size: 15px;
+          border-radius: 20px;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &.bounce {
+            animation: bounce 2s infinite;
+          }
+        }
+      }
+
+      @keyframes bounce {
+        20%,
+        53%,
+        80%,
+        0%,
+        100% {
+          -webkit-animation-timing-function: cubic-bezier(
+            0.215,
+            0.61,
+            0.355,
+            1
+          );
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+
+        40%,
+        43% {
+          -webkit-animation-timing-function: cubic-bezier(
+            0.755,
+            0.05,
+            0.855,
+            0.06
+          );
+          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          -webkit-transform: translate3d(0, -30px, 0);
+          transform: translate3d(0, -30px, 0);
+        }
+
+        70% {
+          -webkit-animation-timing-function: cubic-bezier(
+            0.755,
+            0.05,
+            0.855,
+            0.06
+          );
+          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          -webkit-transform: translate3d(0, -15px, 0);
+          transform: translate3d(0, -15px, 0);
+        }
+
+        90% {
+          -webkit-transform: translate3d(0, -4px, 0);
+          transform: translate3d(0, -4px, 0);
+        }
+      }
+    }
+  }
+  .dot {
+    offset-path: path("M 0 100 Q 100 0 200 100 Q 300 200 400 100");
+    position: absolute;
+    offset-rotate: 0deg;
+    animation: move 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes move {
+    100% {
+      offset-path: path("M 0 100 Q 100 200 200 100 Q 300 0 400 100");
+    }
+  }
+
+  .dot:nth-of-type(1) {
+    offset-distance: 3%;
+  }
+  .dot:nth-of-type(2) {
+    offset-distance: 20%;
+  }
+
+  .dot:nth-of-type(3) {
+    offset-distance: 40%;
+  }
+
+  .dot:nth-of-type(4) {
+    offset-distance: 60%;
+  }
+
+  .dot:nth-of-type(5) {
+    offset-distance: 80%;
+  }
+
+  .dot:nth-of-type(6) {
+    offset-distance: 98%;
+  }
+
+  .dot {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+  }
+
+  section {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    margin: auto;
+  }
+  svg {
+    position: absolute;
+    stroke-width: 2px;
+  }
+
+  body {
+    background: #f7d4d4;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 500px) {
+  .skill-page {
+  
+    flex-direction: column;
+    .text-zone {
+      
+      p {
+       font-size: small;
+      }
+      .cv {
+        border: 1px solid white;
+        justify-content: flex-start;
+        h1 {
+          margin-right:3rem ;
+        }
+      }
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  .skill-page {
+    z-index: -1;
+  }
+
+}
